@@ -4,7 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin'); /*每次编译之前
 const ExtractTextPlugin = require("extract-text-webpack-plugin"); /*提取css到为单独文件*/
 const HtmlWebpackPlugin = require('html-webpack-plugin'); /*生成html*/
 const CopyWebpackPlugin = require('copy-webpack-plugin'); /*复制文件*/
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin'); /*精简输出*/
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin') /*精简输出*/
 module.exports = {
 	entry: {		
 		index: './js/index.js', /*首页*/	
@@ -115,6 +115,7 @@ module.exports = {
 		    from: __dirname + '/img',
 		    to:'img/'
 		}]),
+		 new UglifyJsPlugin(),
 		new CleanWebpackPlugin(['build']) //编译前先清除文件夹
 	],
 
