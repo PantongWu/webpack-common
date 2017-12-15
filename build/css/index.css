@@ -1,0 +1,35 @@
+/*! xx所有，翻版必究 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.inlink-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  height: 70px;
+  background: dodgerblue;
+  margin-bottom: 30px;
+}
+header a {
+  text-decoration: none;
+}
+header div {
+  color: white;
+  margin-right: 30px;
+}
+footer {
+  height: 100px;
+  line-height: 100px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  background: dodgerblue;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL2Nzcy9pbmRleC5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/
