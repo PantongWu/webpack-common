@@ -11,12 +11,12 @@
 )
 	不推荐，因为无法实时编译。
 
-###用Webpack的ejs模板实现HTML共用:
-####项目结构:![](http://www.z4a.net/images/2017/12/15/8R5EGZ8YQPF3MRMJFN.md.png)
+### 用Webpack的ejs模板实现HTML共用:
+#### 项目结构:![](http://www.z4a.net/images/2017/12/15/8R5EGZ8YQPF3MRMJFN.md.png)
 
-####在线浏览[http://github.czero.cn/webpackcommon/](http://github.czero.cn/webpackcommon/)
+#### 在线浏览[http://github.czero.cn/webpackcommon/](http://github.czero.cn/webpackcommon/)
 ####  [Github源码,欢迎star](https://github.com/czero1995/webpack-common)
-####安装
+#### 安装
 
 	npm install ejs-loader 
 	npm install ejs-render-loader
@@ -48,14 +48,14 @@
 	</footer>
 
 
-###在.ejs里面引入公共页面的头部和尾部
-####index.ejs
+### 在.ejs里面引入公共页面的头部和尾部
+#### index.ejs
 
 	<% include common/header.html %>
 	<div>这是首页</div>
 	<% include common/footer.html %>
 
-####second.js
+#### second.js
 	<% include common/header.html %>
 		<div>这是第二页</div>
 	<% include common/footer.html %>
@@ -68,25 +68,25 @@
 
 解决方法是在webpack.config.js里面添加 CopyWebpackPlugin，把img文件夹拷贝到生产环境
 
-###在webpack.config.js中引入插件
+### 在webpack.config.js中引入插件
 	var CopyWebpackPlugin = require('copy-webpack-plugin');
 
-###在module.exports 中 plugins：
+### 在module.exports 中 plugins：
 	new CopyWebpackPlugin([{
 	     from: 'runtime/images/*'
 	}])
 
-#开发环境和生产环境分离
-####将开发环境和生产环境分离，可以提高代码的可读性和可维护性在不同环境声声明不同的调试方式，执行和打包的速度也不一样
+# 开发环境和生产环境分离
+#### 将开发环境和生产环境分离，可以提高代码的可读性和可维护性在不同环境声声明不同的调试方式，执行和打包的速度也不一样
 比方说在开发环境中，我们可以不使用
 
 	babel,ExtractTextPlugin,UglifyJSPlugin,postcss等
 	
 一些loader和插件的使用，因为这样可以加快我们的编译速度，减少等待的时间，提高开发效率。
 
-####在生产环境中，我们需要对文件进行压缩，去除空白和注释，添加css后缀，在js文件中添加声明注释，将css分离，将es6转化成es5，提高兼容性等等。
+#### 在生产环境中，我们需要对文件进行压缩，去除空白和注释，添加css后缀，在js文件中添加声明注释，将css分离，将es6转化成es5，提高兼容性等等。
 ##方法:
-###在package.json文件中
+### 在package.json文件中
 	"scripts": {
 	    "build": "webpack --optimize-minimize",
 	    "dev": "webpack-dev-server --config webpack.dev.config.js --open",
